@@ -14,7 +14,11 @@ package edu.towson.cosc435.meegan.semesterprojectpantrypal
 
 object AppState {
         var items: List<Item> = listOf()
+<<<<<<< HEAD
     var loggedInUserId = 1
+=======
+        var loggedInUserId = 1
+>>>>>>> parent of 19ed6ce (done for today)
 
 }
 

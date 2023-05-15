@@ -144,6 +144,7 @@ fun AddScreen() {
             onQueryChanged = { it ->
                 itemNameState.value = TextFieldValue(it)
 
+<<<<<<< HEAD
                 // Call the getFoodList function using a coroutine scope
                 coroutineScope.launch {
                     val foodList = withContext(Dispatchers.IO) {
@@ -162,6 +163,20 @@ fun AddScreen() {
                 isItemNameDropdownVisible.value = false
                 autoCompleteItems.clear()
                 selectedItemIndex.value = 0
+=======
+            val newItem = Item(
+                AppState.loggedInUserId,
+                itemNameState.value.text,
+                categoryState.value.text,
+                quantityState.value.text,
+                expirationDateState.value.text
+            )
+            Log.d("Item", itemNameState.toString())
+            items.add(newItem)
+            databaseHelper.addItem(newItem)
+            AppState.items = items.toList()
+            Log.d("Item", AppState.items.toString())
+>>>>>>> parent of 19ed6ce (done for today)
 
                 coroutineScope.launch {
                     val foodList = withContext(Dispatchers.IO) {
